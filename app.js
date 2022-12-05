@@ -15,12 +15,29 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+//challenge 8
+// Access the parse results as request.body
+ app.post('/compose', (req, res) => {
+  console.log(req.body.postname);
+
+  });
+  
+  
 app.get('/', (req, res) => {
-  res.render('home', {foo: 'FOO'});
+  res.render('home', {message: homeStartingContent });
 });
 
+app.get('/about', (req, res) => {
+  res.render('about', {aboutContent: aboutContent });
+});
 
+app.get('/contact', (req, res) => {
+  res.render('contact', {contactContent: contactContent });
+});
 
+app.get('/compose', (req, res) => {
+  res.render('compose');
+});
 
 
 
