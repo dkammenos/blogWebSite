@@ -15,12 +15,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-//challenge 8
-// Access the parse results as request.body
- app.post('/compose', (req, res) => {
-  console.log(req.body.postname);
 
-  });
   
   
 app.get('/', (req, res) => {
@@ -39,7 +34,13 @@ app.get('/compose', (req, res) => {
   res.render('compose');
 });
 
+//challenge 8
+// Access the parse results as request.body
 
+app.post('/compose', (req, res) => {
+  console.log(req.body.postname);
+
+  });
 
 
 
