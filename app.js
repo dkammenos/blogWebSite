@@ -38,8 +38,13 @@ app.get('/compose', (req, res) => {
 // Access the parse results as request.body
 
 app.post('/compose', (req, res) => {
-  console.log(req.body.postname);
-
+ // console.log(req.body.postname);
+  const post = {
+    title :req.body.posttitle,
+    postbody :req.body.posttext
+    }
+    console.log(post);
+   
   });
 
 
