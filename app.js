@@ -15,13 +15,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-global.globalPost=[];
+let Posts=[];
   
   
 app.get('/', (req, res) => {
-  res.render('home', {message: homeStartingContent,posts:globalPost });
+  res.render('home', {message: homeStartingContent,posts:Posts });
   //challenge 11
-  console.log(globalPost);
+  console.log(Posts);
 });
 
 app.get('/about', (req, res) => {
@@ -45,7 +45,7 @@ app.post('/compose', (req, res) => {
     title :req.body.posttitle,
     postbody :req.body.posttext
     }
-    globalPost.push(post);
+    Posts.push(post);
     res.redirect("/");
    
   });
