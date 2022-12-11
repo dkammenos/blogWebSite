@@ -3,6 +3,14 @@
 
 <p><%=message%></p>
 
-<p><%=posts%></p>
-
+<% posts.forEach(post => {  %>
+   
+    
+    <h2>
+            <%= post.title%>
+    </h2>
+          <p>
+            <%= post.postbody.substring(0,100)%> <a href="posts/<%=post.title%>">Διαβάστε Περισσότερα</a>
+          </p>
+ <% }) %>
 <%- include('partials/footer'); -%>
